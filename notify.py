@@ -52,8 +52,20 @@ def main():
         f"https://api.telegram.org/bot{TOKEN}/sendMessage",
         data=data, headers={"Content-Type": "application/x-www-form-urlencoded"},
     )
-    with urllib.request.urlopen(req, timeout=30) as r:
-        print("Telegram response:", r.status)
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            print("Telegram response:", r.status)
+    except urllib.error.HTTPError as e:
+        # Telegram rejected the message (e.g. 403: bot blocked / not
+        # started / wrong chat id). Log the real reason and do NOT fail
+        # the workflow — the subscription files are already committed.
+        try:
+            body = e.read().decode("utf-8", "replace")
+        except Exception:
+            body = ""
+        print(f"Telegram send failed: HTTP {e.code} {body}")
+    except Exception as e:
+        print(f"Telegram send failed: {e}")
     return 0
 
 
