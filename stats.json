@@ -1,0 +1,41 @@
+{
+  "generated_at_utc": "2026-11-09T05:23:03.657909Z",
+  "sources": {
+    "raydikalx_de": {
+      "ok": true,
+      "url": "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/Countries/Germany.txt",
+      "total_lines": 111,
+      "kept_from_this_source": 33
+    },
+    "raydikalx_us": {
+      "ok": true,
+      "url": "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/Countries/United_States.txt",
+      "total_lines": 403,
+      "kept_from_this_source": 48
+    },
+    "au1rxx": {
+      "ok": true,
+      "url": "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt",
+      "total_lines": 1751
+    }
+  },
+  "kept": {
+    "DE": 24,
+    "US": 28
+  },
+  "dropped_ambiguous_or_other_country": 531,
+  "dropped_wrong_protocol": 373,
+  "notes": [
+    "Country is per-file only (DE / US). IP still rotates when a free node dies.",
+    "GeoIP via ip-api.com batch (free, no key). Ambiguous nodes are dropped, never guessed.",
+    "Cloudflare anycast IPs are never used to attribute a country."
+  ],
+  "kept_de_by_protocol": {
+    "vless": 20,
+    "hy2": 4
+  },
+  "kept_us_by_protocol": {
+    "vless": 20,
+    "hy2": 8
+  }
+}
