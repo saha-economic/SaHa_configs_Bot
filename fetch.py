@@ -14,8 +14,10 @@ Sources (public, free, no key):
 Rules:
   * DE file contains only Germany nodes, US file only USA nodes.
   * Only VLESS+Reality, Hysteria2, TUIC. No VMess / Shadowsocks / Trojan.
-  * Per file: max 30 nodes — up to 20 Reality, up to 10 Hysteria2
-    (TUIC fills remaining slots only if both are short).
+  * Per file: max 2 nodes — 1 Reality + 1 Hysteria2.
+    Saha asked for 2 best per country (2026-11-09) so lists stay
+    minimal: 1 main + 1 backup per country. Trade-off: if both
+    die before the next 2-hour run, re-run the workflow manually.
   * IP is NOT fixed: when a free node dies, the next node in the same
     file is the same country, but a different IP. Only a dedicated
     VPS gives a fixed IP. This script never claims otherwise.
@@ -45,9 +47,9 @@ RAY_DE_URL = f"{RAY_BASE}/Countries/Germany.txt"
 RAY_US_URL = f"{RAY_BASE}/Countries/United_States.txt"
 IP_API_BATCH = "http://ip-api.com/batch?fields=query,countryCode,status"
 
-MAX_PER_FILE = 30
-MAX_REALITY = 20
-MAX_HY2 = 10
+MAX_PER_FILE = 2
+MAX_REALITY = 1
+MAX_HY2 = 1
 
 # Cloudflare anycast ranges: GeoIP of these IPs does not tell you
 # where the real VLESS server is, so never attribute a country from them.
