@@ -1,17 +1,17 @@
 {
-  "generated_at_utc": "2026-11-09T06:17:34.917905Z",
+  "generated_at_utc": "2026-11-09T06:27:05.740976Z",
   "sources": {
     "raydikalx_de": {
       "ok": true,
       "url": "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/Countries/Germany.txt",
-      "total_lines": 114,
-      "kept_from_this_source": 32
+      "total_lines": 112,
+      "kept_from_this_source": 34
     },
     "raydikalx_us": {
       "ok": true,
       "url": "https://raw.githubusercontent.com/0xRadikal/Free-v2ray-Configs/main/Countries/United_States.txt",
-      "total_lines": 398,
-      "kept_from_this_source": 51
+      "total_lines": 390,
+      "kept_from_this_source": 49
     },
     "au1rxx": {
       "ok": true,
@@ -24,7 +24,7 @@
     "US": 30
   },
   "dropped_ambiguous_or_other_country": 517,
-  "dropped_wrong_protocol": 368,
+  "dropped_wrong_protocol": 356,
   "notes": [
     "Country is per-file only (DE / US). IP still rotates when a free node dies.",
     "GeoIP via ip-api.com batch (free, no key). Ambiguous nodes are dropped, never guessed.",
