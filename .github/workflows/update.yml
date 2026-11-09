@@ -30,10 +30,10 @@ jobs:
           git diff --cached --quiet || git commit -m "Update DE/US subscriptions"
           git push
 
-      # Telegram is optional: if the Secrets are not set, this step is
-      # skipped and the workflow still succeeds (files are still committed).
+      # Telegram is optional: notify.py itself exits 0 silently if the
+      # Secrets are not set, so no `if: secrets...` here — GitHub does
+      # not allow `secrets` in an `if:` expression (Startup failure).
       - name: Notify on Telegram (optional)
-        if: ${{ secrets.TELEGRAM_BOT_TOKEN != '' && secrets.TELEGRAM_CHAT_ID != '' }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
